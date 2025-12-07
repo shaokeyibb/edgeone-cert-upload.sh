@@ -1,0 +1,37 @@
+# 腾讯云 EdgeOne 证书上传脚本配置文件示例
+# 
+# 使用方法：
+#   1. 复制此文件到 ~/.edgeone-cert-upload.conf 或 /etc/edgeone-cert-upload.conf
+#   2. 根据实际情况修改以下配置项
+#   3. 配置文件中的配置项可以通过命令行参数覆盖
+
+# EdgeOne Zone ID（必需）
+# 在腾讯云 EdgeOne 控制台可以找到您的 Zone ID
+ZONE_ID=your-zone-id-here
+
+# 腾讯云 API 密钥（必需）
+# 在腾讯云控制台 -> 访问管理 -> API密钥管理 中创建
+SECRET_ID=your-secret-id-here
+SECRET_KEY=your-secret-key-here
+
+# 腾讯云区域（可选，默认: ap-guangzhou）
+# 可选值: ap-guangzhou, ap-shanghai, ap-beijing, ap-chengdu, ap-chongqing, 
+#         ap-shenzhen-fsi, ap-shanghai-fsi, ap-beijing-fsi, ap-hongkong, 
+#         ap-singapore, ap-mumbai, ap-seoul, ap-tokyo, ap-bangkok, 
+#         na-siliconvalley, na-ashburn, eu-frankfurt, eu-moscow
+REGION=ap-guangzhou
+
+# tccli 命令路径（可选，默认: tccli）
+# 如果 tccli 不在 PATH 中，请指定完整路径
+TCCLI_PATH=tccli
+
+# 日志文件路径（可选）
+# 如果指定，日志将同时输出到标准输出和此文件
+# 如果不指定，仅输出到标准输出
+LOG_FILE=/var/log/edgeone-cert-upload.log
+
+# 证书别名（可选）
+# 如果指定，上传的证书将使用此别名
+# 如果不指定，将自动生成别名（格式: 域名-时间戳）
+CERT_ALIAS=MyCertificate
+
